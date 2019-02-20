@@ -31,5 +31,17 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
+        get("/donor", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("template", "templates/donor.vtl");
+            return new ModelAndView(model, layout);
+          }, new VelocityTemplateEngine());
+
+          get("/recepient", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("template", "templates/recepient.vtl");
+            return new ModelAndView(model, layout);
+          }, new VelocityTemplateEngine());
+
     }
 }
