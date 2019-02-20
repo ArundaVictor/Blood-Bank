@@ -134,3 +134,16 @@ footer p { font-size:13px; color:black; padding-bottom:0px; margin-bottom:8px;}
     min-width: 100px;
     text-align: center;
 }
+.notifications{
+    text-align: center;
+}
+.donor2{
+    max-width: 900px;
+    height: 350px;
+    border-color: none;
+    /* border-radius: 100%; */
+    margin: 10px;
+}
+.donor3{
+    width: 900px; 
+}
