@@ -59,6 +59,7 @@ body {
     border-style: solid;
     border-color: #f3f9ff;
     border-radius: 20px;
+    color: black;
 }
 .second{
     min-height: 500px;
@@ -120,4 +121,16 @@ footer p { font-size:13px; color:black; padding-bottom:0px; margin-bottom:8px;}
 .img-fluid {
     width: 200px;
     height: 200px;
+}
+
+.donor1{
+    max-width: 700px;
+    height: 300px;
+    border-color: none;
+    /* border-radius: 100%; */
+    margin: 10px;
+}
+.b1{
+    min-width: 100px;
+    text-align: center;
 }
