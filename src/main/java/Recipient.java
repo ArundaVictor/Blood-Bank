@@ -3,13 +3,13 @@ import java.util.List;
 
 public class Recipient extends Patient {
 
-    public Recipient(String name, String email, String condition, String age, int id) {
+    public Recipient(String name, String email, String condition, String age, String bgroup) {
 
         this.email = email;
         this.age = age;
         this.condition = condition;
-        this.id = id;
         this.name = name;
+        this.bgroup = bgroup;
 
     }
 
@@ -25,9 +25,9 @@ public class Recipient extends Patient {
 
     public void save() {
         try (Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO recipients (name, email, age, condition) VALUES (:name, :email, :age, :condition);";
+            String sql = "INSERT INTO recipients (name, email, age, condition, bgroup) VALUES (:name, :email, :age, :condition, :bgroup);";
             this.id = (int) con.createQuery(sql, true).addParameter("name", this.name).addParameter("email", this.email)
-                    .addParameter("age", this.age).addParameter("condition", this.condition).executeUpdate().getKey();
+                    .addParameter("age", this.age).addParameter("condition", this.condition).addParameter("bgroup", this.bgroup).executeUpdate().getKey();
         }
     }
 
@@ -48,9 +48,9 @@ public class Recipient extends Patient {
 
     public void updateName(String name, String email, String condition, String age) {
         try (Connection con = DB.sql2o.open()) {
-            String sql = "UPDATE recipients SET name=:name, email=:email, condition=:condition, age=:age WHERE id=:id;";
+            String sql = "UPDATE recipients SET name=:name, email=:email, condition=:condition, age=:age, bgroup=:bgroup WHERE id=:id;";
             con.createQuery(sql).addParameter("id", id).addParameter("name", name).addParameter("email", email)
-                    .addParameter("age", age).addParameter("condition", condition).executeUpdate();
+                    .addParameter("age", age).addParameter("condition", condition).addParameter("bgroup", this.bgroup).executeUpdate();
         }
     }
 
