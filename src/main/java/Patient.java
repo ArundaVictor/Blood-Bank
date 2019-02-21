@@ -5,6 +5,7 @@ public abstract class Patient{
     public String email;
     public String condition;
     public String age;
+    public String bgroup;
 
 
 public String getName(){
@@ -25,6 +26,10 @@ public String getCondition(){
 
 public String getAge(){
     return age;
+}
+
+public String getGroup(){
+    return bgroup;
 }
 
 
