@@ -1,0 +1,21 @@
+<div class="well">
+    #if ($recipient)
+        <ul>
+            #foreach ($recipient in $recipient)
+            
+                <p>Recipient's Name: $recipient.getName()</p>
+                <p>Recipient ID: $recipient.getId()</p>
+                <p>Age: $recipient.getAge()</p>
+                <p>Email: $recipient.getEmail()</p>
+                <p>Condition: $recipient.getCondition()</p>
+                <p>Blood group: $recipient.getGroup()</p>
+
+            <hr>
+        #end
+    </ul>
+#else
+    <p>No Recipients added!</p>
+#end
+</div>
+<br>
+<br>
