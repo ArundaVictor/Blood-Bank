@@ -1,20 +1,43 @@
-<div class="well">
-    #if ($donor)
-        <ul>
-            #foreach ($donor in $donor)
-                <p>Donor's name: $donor.getName()</p>
-                <p>Donor ID: $donor.getId()</p>
-                <p>Age: $donor.getAge()</p>
-                <p>Email: $donor.getEmail()</p>
-                <p>Condition: $donor.getCondition()</p>
-                <p>Blood group: $donor.getGroup()</p>
+<div class="container-fluid">
+    <div class="row justify-content-md-center">
+        <div col="col-md-4 justify-content-md-center">
 
-             <hr>
-        #end
-    </ul>
-#else
-    <p>No Donors added!</p>
-#end
+        </div>
+        <div class="col-md-8">
+
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">NO</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Condition</th>
+                        <th scope="col">Blood Group</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    #if ($donor)
+                    <ul>
+                        #foreach ($donor in $donor)
+                        <tr>
+                            <th scope="row">$donor.getId()</th>
+                            <td>$donor.getName()</td>
+                            <td>$donor.getEmail()</td>
+                            <td>$donor.getAge()</td>
+                            <td>$donor.getCondition()</td>
+                            <td>$donor.getGroup()</td>
+                            <td><a class="nav-link" href="/bookSuccess"><input type="Button" value="Request Donor"></a></td>
+                        </tr>
+                        #end
+                    </ul>
+                    #else
+                    <p>No Donors added!</p>
+                    #end
+                    <br>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
 </div>
-<br>
-<br>

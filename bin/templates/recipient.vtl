@@ -1,21 +1,44 @@
-<div class="well">
-    #if ($recipient)
-        <ul>
-            #foreach ($recipient in $recipient)
-            
-                <p>Recipient's Name: $recipient.getName()</p>
-                <p>Recipient ID: $recipient.getId()</p>
-                <p>Age: $recipient.getAge()</p>
-                <p>Email: $recipient.getEmail()</p>
-                <p>Condition: $recipient.getCondition()</p>
-                <p>Blood group: $recipient.getGroup()</p>
+<div class="container-fluid">
+    <div class="row justify-content-md-center">
+        <div col="col-md-4 justify-content-md-center">
 
-            <hr>
-        #end
-    </ul>
-#else
-    <p>No Recipients added!</p>
-#end
+        </div>
+        <div class="col-md-8">
+
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">NO</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Condition</th>
+                        <th scope="col">Blood Group</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    #if ($recipient)
+                    <ul>
+                        #foreach ($recipient in $recipient)
+                        <tr>
+                            <th scope="row">$recipient.getId()</th>
+                            <td>$recipient.getName()</td>
+                            <td>$recipient.getEmail()</td>
+                            <td>$recipient.getAge()</td>
+                            <td>$recipient.getCondition()</td>
+                            <td>$recipient.getGroup()</td>
+                            <td><a class="nav-link" href="/donors"><input type="Button" value="Request Donor"></a></td>
+                        </tr>
+                        #end
+                    </ul>
+                    #else
+                    <p>No recipients added!</p>
+                    #end
+                    <br>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
 </div>
-<br>
-<br>
